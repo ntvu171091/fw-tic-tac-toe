@@ -12,6 +12,8 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
 }
 
 .main {
@@ -25,6 +27,13 @@ body {
   flex-direction: column;
   min-width: 300px;
   align-items: center;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .game {
@@ -50,6 +59,7 @@ body {
   margin: 0;
   grid-column-end: 3;
   grid-column-start: 1;
+  margin-bottom: 10px;
 }
 
 .square {
@@ -73,6 +83,10 @@ body {
   outline: none;
 }
 
+.square:hover {
+  background: #f0f0f0;
+}
+
 .board-row:after {
   clear: both;
   content: "";
@@ -83,11 +97,15 @@ body {
   border: 1px solid #20b7f6;
   border-radius: 5px;
   padding: 10px;
+  background-color: #fff;
+  min-width: 200px;
 }
 
 .history h4 {
   text-align: center;
   margin: 0;
+  margin-bottom: 10px;
+  color: #20b7f6;
 }
 
 .history ul {
@@ -95,7 +113,10 @@ body {
   padding: 0;
   margin: 0;
   font-size: 14px;
-  text-align: center;
+}
+
+.history li {
+  margin: 5px 0;
 }
 
 .history button {
@@ -103,10 +124,35 @@ body {
   margin: 2px;
   cursor: pointer;
   border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #fff;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.history button:hover {
+  background-color: #20b7f6;
+  color: white;
 }
 
 .restart-btn {
   cursor: pointer;
   border: 1px solid #3787ce;
   border-radius: 4px;
+  padding: 10px 20px;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.restart-btn:hover {
+  background-color: #3787ce;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .game-container {
+    flex-direction: column;
+  }
 }
